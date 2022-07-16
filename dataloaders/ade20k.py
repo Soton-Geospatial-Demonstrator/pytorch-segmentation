@@ -16,7 +16,7 @@ class ADE20KDataset(BaseDataSet):
     http://groups.csail.mit.edu/vision/datasets/ADE20K/
     """
     def __init__(self, **kwargs):
-        self.num_classes = 150
+        self.num_classes = 2 # 150 for original dataset
         self.palette = palette.ADE20K_palette
         super(ADE20KDataset, self).__init__(**kwargs)
 
@@ -32,7 +32,7 @@ class ADE20KDataset(BaseDataSet):
         image_path = os.path.join(self.image_dir, image_id + '.jpg')
         label_path = os.path.join(self.label_dir, image_id + '.png')
         image = np.asarray(Image.open(image_path).convert('RGB'), dtype=np.float32)
-        label = np.asarray(Image.open(label_path), dtype=np.int32) - 1 # from -1 to 149
+        label = np.asarray(Image.open(label_path), dtype=np.int32)  # from -1 to 149
         return image, label, image_id
 
 class ADE20K(BaseDataLoader):
