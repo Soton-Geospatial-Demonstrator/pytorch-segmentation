@@ -28,10 +28,10 @@
     "train_loader": {
         "args": {
             "augment": true,
-            "base_size": 400,
+            "base_size": 460,
             "batch_size": 2,
             "blur": true,
-            "crop_size": 380,
+            "crop_size": 400,
             "data_dir": "data/sentinel",
             "flip": true,
             "num_workers": 8,
@@ -40,11 +40,11 @@
             "shuffle": true,
             "split": "training"
         },
-        "type": "ADE20K"
+        "type": "Sentinel"
     },
     "trainer": {
         "early_stop": 30,
-        "epochs": 1200,
+        "epochs": 100,
         "log_dir": "saved/runs",
         "log_per_iter": 20,
         "monitor": "max Mean_IoU",
@@ -58,12 +58,12 @@
     "val_loader": {
         "args": {
             "batch_size": 2,
-            "crop_size": 480,
+            "crop_size": 460,
             "data_dir": "data/sentinel",
             "num_workers": 4,
             "split": "validation",
             "val": true
         },
-        "type": "ADE20K"
+        "type": "Sentinel"
     }
 }
