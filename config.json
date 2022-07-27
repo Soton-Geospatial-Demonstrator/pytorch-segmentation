@@ -14,7 +14,7 @@
         "type": "Poly"
     },
     "n_gpu": 1,
-    "name": "UNet_T15",
+    "name": "UNet_T04",
     "optimizer": {
         "args": {
             "lr": 0.01,
@@ -29,10 +29,10 @@
         "args": {
             "augment": true,
             "base_size": 460,
-            "batch_size": 2,
+            "batch_size": 1,
             "blur": true,
-            "crop_size": 400,
-            "data_dir": "data/sentinel",
+            "crop_size": 440,
+            "data_dir": "data/geodemo_T04",
             "flip": true,
             "num_workers": 8,
             "rotate": true,
@@ -57,9 +57,9 @@
     "use_synch_bn": false,
     "val_loader": {
         "args": {
-            "batch_size": 2,
+            "batch_size": 1,
             "crop_size": 460,
-            "data_dir": "data/sentinel",
+            "data_dir": "data/geodemo_T04",
             "num_workers": 4,
             "split": "validation",
             "val": true
